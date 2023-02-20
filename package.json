@@ -1,5 +1,5 @@
 {
-  "name": "TaskSupport",
+  "name": "task-support",
   "version": "1.2.1",
   "private": true,
   "dependencies": {
