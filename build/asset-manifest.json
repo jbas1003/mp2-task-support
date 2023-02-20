@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/hope-ui/react/build/static/css/main.9a42070c.css",
+    "main.js": "/hope-ui/react/build/static/js/main.cfe80454.js",
+    "static/js/787.e170219d.chunk.js": "/hope-ui/react/build/static/js/787.e170219d.chunk.js",
+    "static/media/01.png": "/hope-ui/react/build/static/media/01.c1a564ed7480897ec19e.png",
+    "static/media/top-header5.png": "/hope-ui/react/build/static/media/top-header5.f1f0a9c88cb67eff9d78.png",
+    "static/media/top-header.png": "/hope-ui/react/build/static/media/top-header.51c6df038b80bc315539.png",
+    "static/media/top-header2.png": "/hope-ui/react/build/static/media/top-header2.9f2b21b4dc69cd2d87f1.png",
+    "static/media/top-header4.png": "/hope-ui/react/build/static/media/top-header4.877eff8290d73c09ef7c.png",
+    "static/media/top-header1.png": "/hope-ui/react/build/static/media/top-header1.6d747c65d8b949580670.png",
+    "static/media/top-header3.png": "/hope-ui/react/build/static/media/top-header3.dc109f70b25c4b637589.png",
+    "static/media/03.png": "/hope-ui/react/build/static/media/03.36774bca5d38d0b884d8.png",
+    "static/media/05.png": "/hope-ui/react/build/static/media/05.23a59e1edbc0ba231b9b.png",
+    "static/media/02.png": "/hope-ui/react/build/static/media/02.a71cff5bf64b4ea9e79e.png",
+    "static/media/04.png": "/hope-ui/react/build/static/media/04.c901da3344f09cb13bb7.png",
+    "static/media/avtar_2.png": "/hope-ui/react/build/static/media/avtar_2.839c445e752bfe9fdd2d.png",
+    "static/media/avtar_1.png": "/hope-ui/react/build/static/media/avtar_1.2b0f5677e1bd5e6f7029.png",
+    "static/media/avtar_5.png": "/hope-ui/react/build/static/media/avtar_5.4fb8c4d346a811b9090d.png",
+    "static/media/avtar_4.png": "/hope-ui/react/build/static/media/avtar_4.027f8ab6e115ac5f3a5f.png",
+    "static/media/avtar_3.png": "/hope-ui/react/build/static/media/avtar_3.54ad96698c303768180b.png",
+    "static/media/500.png": "/hope-ui/react/build/static/media/500.8af3420c30d45196b1bf.png",
+    "static/media/404.png": "/hope-ui/react/build/static/media/404.afab68aa4c4599711644.png",
+    "index.html": "/hope-ui/react/build/index.html",
+    "main.9a42070c.css.map": "/hope-ui/react/build/static/css/main.9a42070c.css.map",
+    "main.cfe80454.js.map": "/hope-ui/react/build/static/js/main.cfe80454.js.map",
+    "787.e170219d.chunk.js.map": "/hope-ui/react/build/static/js/787.e170219d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a42070c.css",
+    "static/js/main.cfe80454.js"
+  ]
+}
