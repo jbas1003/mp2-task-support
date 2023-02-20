@@ -8,22 +8,30 @@ import auth1 from     '../../../assets/images/auth/01.png'
 import brand from '../../../assets/images/task support logo - 2.png'
 import { signIn } from '../../../assets/Utils/methods'
 
+
+
 function SignIn () {
+
+   // try {
+   //    console.log('try')
+   //    const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
+   
+   //    if (isUserSignedIn && isUserSignedIn.uname) {
+   //       window.location.href = 'http://localhost:3001/dashboard'
+   //    }
+   //    else{
+         
+   //    }
+   // } catch (error) {
+      
+   // }
 
 
    const [username, setUsername] = useState();
    const [password, setPassword] = useState();
 
    const signInUser = () => {
-      try {
-         console.log('try')
-         const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
-   
-         if (isUserSignedIn && isUserSignedIn.uname) {
-            window.location.href = 'http://localhost:3001/dashboard'
-         }
-         else{
-            signIn(username, password)
+     signIn(username, password)
                .then(result => {
                   return result.json()
                })
@@ -39,10 +47,6 @@ function SignIn () {
                .catch((error) => {
                   console.log('Login Error: ', error)
                })
-         }
-     } catch (error) {
-         
-     }
    }
 
    return (

@@ -142,4 +142,20 @@ export const getTasks = (callback) => {
         })
 }
 
+export const deleteTask = (userId) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify({
+        "userId": userId
+    });
+
+    var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw
+    };
+    
+    return fetch(serverRoutes.deleteTask, requestOptions)
+}
+
 // START: tblTasks Query All

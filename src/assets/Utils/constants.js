@@ -18,7 +18,7 @@ export const serverRoutes = {
     // START: TASKS ROUTES
 
     addTask: myApiURL + '/addTasks',
-    showTasks: myApiURL + '/showTasks'
-
+    showTasks: myApiURL + '/showTasks',
+    deleteTask: myApiURL + '/deleteTask'
     // END: TASKS ROUTES
 }
