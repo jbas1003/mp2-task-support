@@ -56,7 +56,7 @@ class SliderTab {
   updateSlide (item, items, index) {
     this.slider = this.element.querySelector(`.${this.sliderThumb}`);
     const prevItem = this.element.querySelectorAll('.nav-item')
-    Array.from(prevItem,(elem) => {
+    Array.from(prevItem, (elem) => {
       elem.querySelector('.nav-link').classList.remove('active')
     })
     let sum = 0;
