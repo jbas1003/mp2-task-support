@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row,Col, Modal, Form, Button} from 'react-bootstrap'
 import Card from '../../../components/Card'
-import { getUsers, addUser, updateUser, deleteUser, getTasks, AddTask } from '../../../assets/Utils/methods'
+import { getTasks, AddTask } from '../../../assets/Utils/methods'
 import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
@@ -26,9 +26,9 @@ const TaskData = () => {
    const closeModalAdd = () => setShowAdd(false)
 
 
-   const [showEdit, setShowEdit] = useState(false)
-   const showModalEdit = () => setShowEdit(true)
-   const closeModalEdit = () => setShowEdit(false)
+   // const [showEdit, setShowEdit] = useState(false)
+   // const showModalEdit = () => setShowEdit(true)
+   // const closeModalEdit = () => setShowEdit(false)
 
    const [tasks, setTasks] = useState([])
 
@@ -63,7 +63,7 @@ const TaskData = () => {
    // }
 
    function delTask(taskId){
-      deleteUser(taskId)
+      // deleteTask(taskId)
       get()
       Redirect(TaskData)
    }
