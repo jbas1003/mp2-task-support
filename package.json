@@ -1,5 +1,5 @@
 {
-  "name": "hope-ui-react",
+  "name": "task-support",
   "version": "1.2.1",
   "private": true,
   "dependencies": {
@@ -67,11 +67,7 @@
     ]
   },
   "devDependencies": {
-    "fslightbox-react": "^1.7.2",
+    "fslightbox-react": "^1.6.2-2",
     "sortablejs": "^1.14.0"
-  },
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }

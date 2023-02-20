@@ -384,14 +384,14 @@ const Index = (props) => {
                 </Button>
             </div>
             <div className="middle" style={{display: "none"}}>
-                {/* <button data-trigger="left-side-bar" className="d-xl-none btn btn-xs mid-menu" type="button">
+                <button data-trigger="left-side-bar" className="d-xl-none btn btn-xs mid-menu" type="button">
                     <i className="icon">
                         <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19.75 11.7256L4.75 11.7256" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                             <path d="M13.7002 5.70124L19.7502 11.7252L13.7002 17.7502" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                         </svg>
                     </i>
-                </button> */}
+                </button>
                 <SidebarOffcanvas />
             </div>
             <div className="btn-download">

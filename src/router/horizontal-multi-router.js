@@ -1,5 +1,5 @@
 import React from 'react'
-import Index from '../views/dashboard/index'
+import Index from '../views/dashboard'
 
 const HorizontalMultiRouter = () => {
     return (

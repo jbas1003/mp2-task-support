@@ -70,8 +70,8 @@ const Simple = (props) => {
 
     return (
         <>
-          <div id="loading">
-          </div>
+          {/* <div id="loading">
+          </div> */}
           <div className="wrapper">
             <SimpleRouter />
           </div>          
