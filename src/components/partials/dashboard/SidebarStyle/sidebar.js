@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import VerticalNav from '../SidebarStyle/vertical-nav'
-// import Scrollbar from 'smooth-scrollbar'
+import Scrollbar from 'smooth-scrollbar'
 import {bindActionCreators} from "redux"
 // import SidebarDark from '../../components/settingoffcanvas'
 
@@ -60,7 +60,7 @@ const Sidebar = (props) => {
             else{
                 props.SidebarActiveStyleAction(sidebarstyleMode);
             }
-            // Scrollbar.init(document.querySelector('#my-scrollbar'))
+            Scrollbar.init(document.querySelector('#my-scrollbar'))
         }
         
          
