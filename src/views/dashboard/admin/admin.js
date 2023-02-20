@@ -4,16 +4,6 @@ import {Row,Col,Modal,Form,Button} from 'react-bootstrap'
 import {Link,useHistory} from 'react-router-dom'
 import Card from '../../../components/Card'
 const Admin =() =>{
-    try {
-        const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
-  
-        if (isUserSignedIn && isUserSignedIn.id) {
-            window.location.href('http://localhost/30001/')
-        }
-    } catch (error) {
-        
-    }
-    
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
