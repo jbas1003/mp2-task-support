@@ -1,5 +1,5 @@
 {
-  "name": "hope-ui-react",
+  "name": "TaskSupport",
   "version": "1.2.1",
   "private": true,
   "dependencies": {
@@ -44,7 +44,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -67,9 +69,5 @@
   "devDependencies": {
     "fslightbox-react": "^1.6.2-2",
     "sortablejs": "^1.14.0"
-  },
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }

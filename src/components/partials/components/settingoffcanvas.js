@@ -115,18 +115,18 @@ const SettingOffcanvas = (props ) => {
     }
 
     // colocustomizermode
-    const colorcustomizerMode = sessionStorage.getItem('color-customizer-mode');
-    const colorcustomizerinfoMode = sessionStorage.getItem('colorcustominfo-mode');
-    const colorcustomizerprimaryMode = sessionStorage.getItem('colorcustomprimary-mode');
-    if(colorcustomizerMode=== null){
-        props.ColorCustomizerAction(props.customizerMode, props.cololrinfomode, props.colorprimarymode);
-        document.documentElement.style.setProperty('--bs-info', props.cololrinfomode );
-    }
-    else{
-        props.ColorCustomizerAction(colorcustomizerMode, colorcustomizerinfoMode, colorcustomizerprimaryMode);
-        document.documentElement.style.setProperty('--bs-info', colorcustomizerinfoMode);
-    }
-
+    // const colorcustomizerMode = sessionStorage.getItem('color-customizer-mode');
+    // const colorcustomizerinfoMode = sessionStorage.getItem('colorcustominfo-mode');
+    // const colorcustomizerprimaryMode = sessionStorage.getItem('colorcustomprimary-mode');
+    // if(colorcustomizerMode=== null){
+    //     props.ColorCustomizerAction(props.customizerMode, props.cololrinfomode, props.colorprimarymode);
+    //     document.documentElement.style.setProperty('--bs-info', props.cololrinfomode );
+    // }
+    // else{
+    //     props.ColorCustomizerAction(colorcustomizerMode, colorcustomizerinfoMode, colorcustomizerprimaryMode);
+    //     document.documentElement.style.setProperty('--bs-info', colorcustomizerinfoMode);
+    // }
+    props.ColorCustomizerAction('theme-color-red', '#366AF0', '#DB5363')
     
     
 
@@ -140,13 +140,14 @@ const SettingOffcanvas = (props ) => {
     }    
 
     // sidebarcolormode
-    const sidebarcolorMode1 = sessionStorage.getItem('sidebarcolor-mode');
-    if(sidebarcolorMode1===null){
-        props.SidebarColorAction(props.sidebarcolorMode);
-    }
-    else{
-        props.SidebarColorAction(sidebarcolorMode1);
-    }
+    // const sidebarcolorMode1 = sessionStorage.getItem('sidebarcolor-mode');
+    props.SidebarColorAction('dark')
+    // if(sidebarcolorMode1===null){
+    //     props.SidebarColorAction(props.sidebarcolorMode);
+    // }
+    // else{
+    //     props.SidebarColorAction(sidebarcolorMode1);
+    // }
     var sidebartypeMode = sessionStorage.getItem("sidebarminitype-mode");
     props.sidebarTypeMode.mini = sidebartypeMode
     if(sidebartypeMode === 'sidebar-mini'){
@@ -206,21 +207,23 @@ const SettingOffcanvas = (props ) => {
     }
     
     // sidebarstylemode
-    const sidebarstyleMode = sessionStorage.getItem('sidebarstyle-mode');
-    if(sidebarstyleMode===null){
-        props.SidebarActiveStyleAction(props.sidebaractivestyleMode);
-    }
-    else{
-        props.SidebarActiveStyleAction(sidebarstyleMode);
-    }
-    // navbarstylemode
-    const navbarstyleMode1 = sessionStorage.getItem('Navbarstyle-mode');
-    if(navbarstyleMode1===null){
-        props.NavbarstyleAction(props.navbarstylemode);
-    }
-    else{
-        props.NavbarstyleAction(navbarstyleMode1);
-    }
+    props.SidebarActiveStyleAction('roundedAllSide');
+    props.NavbarstyleAction('sticky')
+    // const sidebarstyleMode = sessionStorage.getItem('sidebarstyle-mode');
+    // if(sidebarstyleMode===null){
+    //     props.SidebarActiveStyleAction(props.sidebaractivestyleMode);
+    // }
+    // else{
+    //     props.SidebarActiveStyleAction(sidebarstyleMode);
+    // }
+    // // navbarstylemode
+    // const navbarstyleMode1 = sessionStorage.getItem('Navbarstyle-mode');
+    // if(navbarstyleMode1===null){
+    //     props.NavbarstyleAction(props.navbarstylemode);
+    // }
+    // else{
+    //     props.NavbarstyleAction(navbarstyleMode1);
+    // }
   })
     return (
         <>
@@ -251,7 +254,7 @@ const SettingOffcanvas = (props ) => {
                                     </svg>
                                     <span className="ms-2 "> Dark  </span>
                                 </div>
-                                <div className={`${props.darkMode === 'light'? 'active' : ''}  btn-border`} onClick={() => {props.ModeAction('light')}} data-setting="color-mode" data-name="color" data-value="light">
+                            <div className={`${props.darkMode === 'light'? 'active' : ''}  btn-border`} onClick={() => {props.ModeAction('light')}} data-setting="color-mode" data-name="color" data-value="light">
                                     <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill="currentColor" d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z" />
                                     </svg>
