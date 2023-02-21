@@ -20,7 +20,7 @@ function SignIn () {
          const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
    
          if (isUserSignedIn && isUserSignedIn.uname) {
-            window.location.href = 'http://localhost:3001/dashboard'
+            window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
          }
          else{
             signIn(username, password)
@@ -30,7 +30,7 @@ function SignIn () {
          .then(result => {
             if (result.success) {
                localStorage.setItem('user', JSON.stringify(result.userData))
-               window.location.href = 'http://localhost:3001/dashboard'
+               window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
             }
             else{
                alert('Invalid login')

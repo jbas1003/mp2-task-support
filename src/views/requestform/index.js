@@ -20,7 +20,7 @@ const FormElement = () => {
         })
         .then(result => {
             if (result.success) {
-                window.location.href = 'http://localhost:3001/request-form/submitted'
+                window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/request-form/submitted'
             }
         })
     }
@@ -64,7 +64,7 @@ const FormElement = () => {
                                             <Form.Control as="textarea"  id="exampleFormControlTextarea1" rows="5" onChange={e => settaskDesc(e.target.value)}/>
                                         </Form.Group>
                                         <Button type="button" variant="btn btn-primary" onClick={() => {addTask()}}>Submit</Button>{' '}
-                                        <Button type="button" variant="btn btn-danger" onClick={() => {window.location.href = 'http://localhost:3001/'}}>cancel</Button>
+                                        <Button type="button" variant="btn btn-danger" onClick={() => {window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/'}}>cancel</Button>
                                     </Form>
                                 </Card.Body>
                             </Card>
