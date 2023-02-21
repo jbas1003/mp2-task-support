@@ -25,19 +25,20 @@ function SignIn () {
          else{
             signIn(username, password)
                .then(result => {
+                  console.log(result)
                   return result.json()
                })
-               .then(result => {
-                  console.log(result)
-                  // if (result.success) {
-                  //    console.log(result)
-                  //    localStorage.setItem('user', JSON.stringify(result.userData))
-                  //    window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
-                  // }
-                  // else{
-                  //    alert('Invalid login')
-                  // }
-               })
+               // .then(result => {
+               //    console.log(result)
+               //    if (result.success) {
+               //       console.log(result)
+               //       localStorage.setItem('user', JSON.stringify(result.userData))
+               //       window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
+               //    }
+               //    else{
+               //       alert('Invalid login')
+               //    }
+               // })
                // .catch((error) => {
                //    console.log('Login Error: ', error)
                // })
