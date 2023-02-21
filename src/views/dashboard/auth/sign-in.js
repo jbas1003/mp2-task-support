@@ -21,7 +21,7 @@ function SignIn () {
          const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
    
          if (isUserSignedIn && isUserSignedIn.uname) {
-            window.location.href = 'http://localhost:3001/dashboard'
+            window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/dashboard'
          }
          else{
             signIn(username, password)
@@ -33,7 +33,7 @@ function SignIn () {
             if (result.success) {
                console.log(result)
                localStorage.setItem('user', JSON.stringify(result.userData))
-               window.location.href = 'http://localhost:3001/dashboard'
+               window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/dashboard'
             }
             else{
                alert('Invalid login')
