@@ -1,4 +1,4 @@
-export const myApiURL = 'http://localhost:3000';
+export const myApiURL = 'https://upset-mite-skirt.cyclic.app';
 
 export const serverRoutes = {
     // START: USER ROUTES'
