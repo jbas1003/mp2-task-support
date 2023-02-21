@@ -20,7 +20,7 @@ const FormElement = () => {
         })
         .then(result => {
             if (result.success) {
-                window.location.href = 'https://rococo-crisp-c04416.netlify.app/request-form/submitted'
+                window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/request-form/submitted'
             }
         })
     }
@@ -64,7 +64,7 @@ const FormElement = () => {
                                             <Form.Control as="textarea"  id="exampleFormControlTextarea1" rows="5" onChange={e => settaskDesc(e.target.value)}/>
                                         </Form.Group>
                                         <Button type="button" variant="btn btn-primary" onClick={() => {addTask()}}>Submit</Button>{' '}
-                                        <Button type="button" variant="btn btn-danger" onClick={() => {window.location.href = 'https://rococo-crisp-c04416.netlify.app'}}>cancel</Button>
+                                        <Button type="button" variant="btn btn-danger" onClick={() => {window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app'}}>cancel</Button>
                                     </Form>
                                 </Card.Body>
                             </Card>

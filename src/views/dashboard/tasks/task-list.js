@@ -19,11 +19,11 @@ const TaskData = () => {
          
    }else{
       localStorage.clear();
-      window.location.href = 'https://rococo-crisp-c04416.netlify.app'
+      window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app'
    }
    }catch(error){
    localStorage.clear();
-   window.location.href = 'https://rococo-crisp-c04416.netlify.app'
+   window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app'
    }
 
    const [taskId, setTaskId] = useState(0)

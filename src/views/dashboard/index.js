@@ -77,11 +77,11 @@ const Index = (props) => {
             
         }else{
             localStorage.clear();
-            window.location.href = 'http://localhost:3001/'
+            window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/'
         }
     }catch(error){
         localStorage.clear();
-        window.location.href = 'http://localhost:3001/'
+        window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/'
     }
 
     useEffect(() => {

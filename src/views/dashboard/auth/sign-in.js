@@ -20,12 +20,12 @@ function SignIn () {
          .then(result => {
             return result.json()
          })
-         .then(async result => {
+         .then(result => {
             console.log(result)
             if (result.success) {
                console.log(result)
                localStorage.setItem('user', JSON.stringify(result.userData))
-               window.location.href = 'https://rococo-crisp-c04416.netlify.app/dashboard'
+               window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/dashboard'
             }
             else{
                alert('Invalid login')
