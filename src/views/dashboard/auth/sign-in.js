@@ -16,14 +16,7 @@ function SignIn () {
 
    const signInUser = () => {
 
-      try {
-         const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
-   
-         if (isUserSignedIn && isUserSignedIn.uname) {
-            window.location.href = 'https://rococo-crisp-c04416.netlify.app/dashboard'
-         }
-         else{
-            signIn(username, password)
+      signIn(username, password)
          .then(result => {
             return result.json()
          })
@@ -41,10 +34,19 @@ function SignIn () {
          .catch((error) => {
             console.log('Login Error: ', error)
          })
-         }
-     } catch (error) {
+
+   //    try {
+   //       const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
+   
+   //       if (isUserSignedIn && isUserSignedIn.uname) {
+   //          window.location.href = 'https://rococo-crisp-c04416.netlify.app/dashboard'
+   //       }
+   //       else{
          
-     }
+   //       }
+   //   } catch (error) {
+         
+   //   }
 
       
    }
