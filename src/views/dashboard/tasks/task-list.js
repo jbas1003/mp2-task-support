@@ -19,11 +19,11 @@ const TaskData = () => {
          
    }else{
       localStorage.clear();
-      window.location.href = 'http://localhost:3001/'
+      window.location.href = 'https://chimerical-tapioca-3da1ba.netlify.app'
    }
    }catch(error){
    localStorage.clear();
-   window.location.href = 'http://localhost:3001/'
+   window.location.href = 'https://chimerical-tapioca-3da1ba.netlify.app'
    }
 
    const [taskId, setTaskId] = useState(0)

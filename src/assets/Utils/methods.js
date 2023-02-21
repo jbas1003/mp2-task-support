@@ -11,9 +11,10 @@ export const signIn = (username, password) => {
         var requestOptions = {
             method: "POST",
             headers: myHeaders,
-            body: raw
+            body: raw,
+            redirect: 'follow'
         };
-        return fetch(serverRoutes.logInUser, requestOptions)
+        fetch(serverRoutes.logInUser, requestOptions)
     }
 
 // START: Add to Table Users

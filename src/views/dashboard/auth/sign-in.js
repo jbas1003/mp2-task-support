@@ -15,37 +15,37 @@ function SignIn () {
    const [password, setPassword] = useState();
 
    const signInUser = () => {
-   
+
       try {
          const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
    
          if (isUserSignedIn && isUserSignedIn.uname) {
-            window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
+            window.location.href = 'https://chimerical-tapioca-3da1ba.netlify.app/dashboard'
          }
          else{
             signIn(username, password)
-               .then(result => {
-                  console.log(result)
-                  return result.json()
-               })
-               // .then(result => {
-               //    console.log(result)
-               //    if (result.success) {
-               //       console.log(result)
-               //       localStorage.setItem('user', JSON.stringify(result.userData))
-               //       window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
-               //    }
-               //    else{
-               //       alert('Invalid login')
-               //    }
-               // })
-               // .catch((error) => {
-               //    console.log('Login Error: ', error)
-               // })
-               }
+         .then(result => {
+            return result.json()
+         })
+         .then(async result => {
+            console.log(result)
+            if (result.success) {
+               console.log(result)
+               localStorage.setItem('user', JSON.stringify(result.userData))
+               window.location.href = 'https://chimerical-tapioca-3da1ba.netlify.app/dashboard'
+            }
+            else{
+               alert('Invalid login')
+            }
+         })
+         .catch((error) => {
+            console.log('Login Error: ', error)
+         })
+         }
      } catch (error) {
          
      }
+
       
    }
 
@@ -62,7 +62,7 @@ function SignIn () {
                                  <Image src={brand} className="Image-fluid gradient-main animated-scaleX" />
                               </Link>
                               <h2 className="mb-2 text-center">Sign In</h2>
-                              <Form>
+                              {/* <Form> */}
                                  <Row>
                                     <Col lg="12">
                                        <Form.Group className="form-group">
@@ -89,7 +89,7 @@ function SignIn () {
                                  <div className="d-flex justify-content-center">
                                     <Button type="submit" onClick={() => {signInUser()}} variant="btn btn-primary">Sign In</Button>
                                  </div>
-                              </Form>
+                              {/* </Form> */}
                            </Card.Body>
                         </Card>
                      </Col>
