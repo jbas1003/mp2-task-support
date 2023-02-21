@@ -29,6 +29,7 @@ function SignIn () {
          })
          .then(result => {
             if (result.success) {
+               console.log(result)
                localStorage.setItem('user', JSON.stringify(result.userData))
                window.location.href = 'https://main--chimerical-tapioca-3da1ba.netlify.app/dashboard'
             }
