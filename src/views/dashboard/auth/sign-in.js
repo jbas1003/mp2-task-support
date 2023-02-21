@@ -64,7 +64,7 @@ function SignIn () {
                                     <Col lg="12">
                                        <Form.Group className="form-group">
                                           <Form.Label htmlFor="email" className="">Username</Form.Label>
-                                          <Form.Control type="email" className="" id="email" aria-describedby="email" placeholder=" " onChange={e => setUsername(e.target.value)} />
+                                          <Form.Control type="text" className="" id="email" aria-describedby="email" placeholder=" " onChange={e => setUsername(e.target.value)} />
                                        </Form.Group>
                                     </Col>
                                     <Col lg="12" className="">
