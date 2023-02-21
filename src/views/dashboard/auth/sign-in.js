@@ -16,16 +16,24 @@ function SignIn () {
 
    const signInUser = () => {
 
-      signIn(username, password)
+
+      try {
+         const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
+   
+         if (isUserSignedIn && isUserSignedIn.uname) {
+            window.location.href = 'http://localhost:3001/dashboard'
+         }
+         else{
+            signIn(username, password)
          .then(result => {
             return result.json()
          })
-         .then(result => {
+         .then(async result => {
             console.log(result)
             if (result.success) {
                console.log(result)
                localStorage.setItem('user', JSON.stringify(result.userData))
-               window.location.href = 'https://stellar-bubblegum-f0fa59.netlify.app/dashboard'
+               window.location.href = 'http://localhost:3001/dashboard'
             }
             else{
                alert('Invalid login')
@@ -34,19 +42,10 @@ function SignIn () {
          .catch((error) => {
             console.log('Login Error: ', error)
          })
-
-   //    try {
-   //       const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
-   
-   //       if (isUserSignedIn && isUserSignedIn.uname) {
-   //          window.location.href = 'https://rococo-crisp-c04416.netlify.app/dashboard'
-   //       }
-   //       else{
+         }
+     } catch (error) {
          
-   //       }
-   //   } catch (error) {
-         
-   //   }
+     }
 
       
    }

@@ -14,7 +14,7 @@ export const signIn = (username, password) => {
             body: raw,
             redirect: 'follow'
         };
-        fetch(serverRoutes.logInUser, requestOptions)
+        return fetch(serverRoutes.logInUser, requestOptions)
     }
 
 // START: Add to Table Users
