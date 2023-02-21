@@ -21,7 +21,7 @@ const TaskSubmitted = () => {
                            <h2 className="mt-3 mb-0">Success !</h2>
                            <p className="cnf-mail mb-1">Congratulations. Your request has been successfully submitted.</p>
                            <div className="d-inline-block w-100">
-                              <Link to="/request-form" className="btn btn-primary mt-3">Back to Home</Link>
+                              <Link to="/request-form" className="btn btn-primary mt-3">Submit another request</Link>
                            </div>
                         </Card.Body>
                      </Card>          

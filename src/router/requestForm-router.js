@@ -9,8 +9,6 @@ const RequestFormRouter = () => {
     return (
             <>
             <Switch>
-
-                {/* auth */}
                 <Route path="/request-form" exact component={FormElement}/>
                 <Route exact path="/request-form/submitted" component={TaskSubmitted}/>
             </Switch>

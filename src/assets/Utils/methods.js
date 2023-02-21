@@ -136,17 +136,22 @@ export const getTasks = (callback) => {
     };
 
     fetch(serverRoutes.showTasks, requestOptions)
-        .then(async (result)=>{
-            var newResult = await result.json()
-            callback(newResult)
+        .then((result)=>{
+            return result.json()
+        })
+        .then(result => {
+            callback(result)
+        })
+        .catch(error => {
+            console.log(`Get task error: ${error}`)
         })
 }
 
-export const deleteTask = (userId) => {
+export const deleteTask = (taskId) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify({
-        "userId": userId
+        "taskId": taskId
     });
 
     var requestOptions = {

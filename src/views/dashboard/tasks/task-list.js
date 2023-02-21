@@ -8,28 +8,30 @@ import {Link} from 'react-router-dom'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 
 
-try{
-   const isUserLoggedIn = JSON.parse(localStorage.getItem('user'))
-   if(isUserLoggedIn && isUserLoggedIn.uname){
-      
-}else{
-   localStorage.clear();
-   window.location.href = 'http://localhost:3001/'
-}
-}catch(error){
-localStorage.clear();
-window.location.href = 'http://localhost:3001/'
-}
+
 
 
 const TaskData = () => {
+
+   try{
+      const isUserLoggedIn = JSON.parse(localStorage.getItem('user'))
+      if(isUserLoggedIn && isUserLoggedIn.uname){
+         
+   }else{
+      localStorage.clear();
+      window.location.href = 'http://localhost:3001/'
+   }
+   }catch(error){
+   localStorage.clear();
+   window.location.href = 'http://localhost:3001/'
+   }
 
    const [taskId, setTaskId] = useState(0)
    const [fname, setFname] = useState('')
    const [mname, setMname] = useState('')
    const [lname, setLname] = useState('')
    const [requestor, setRequestor] = useState('')
-   const [workPhone, setWorkPhone] = useState('')
+   const [workNumber, setWorkNumber] = useState('')
    const [mobile, setMobile] = useState('')
    const [email, setEmail] = useState('')
    const [taskName, setTaskName] = useState('')
@@ -49,21 +51,8 @@ const TaskData = () => {
 
    const [tasks, setTasks] = useState([])
 
-   
-   // function edtUser(userId, fname, lname, mname, email, uname, pword){
-   //    setUserId(userId)
-   //    setFname(fname)
-   //    setLname(lname)
-   //    setMname(mname)
-   //    setEmail(email)
-   //    setUname(uname)
-   //    setPword(pword)
-   //    showModalEdit()
-
-   // }
-
-   function add(){
-      AddTask(taskName, taskDesc, fullName, workPhone, mobile, email).then(result=>{
+   const add = () => {
+      AddTask(taskName, taskDesc, fullName, setWorkNumber, mobile, email).then(result=>{
          get()
       }).catch(error=>{
          console.log(error)
@@ -72,32 +61,31 @@ const TaskData = () => {
       Redirect(TaskData)
    }
 
-   function editTask(taskId, taskName, taskDesc, requestor, workNumber, mobile, email, dateCreated){
+   const editTask = (taskId, taskName, taskDesc, requestor, workNumber, mobile, email, dateCreated) => {
       setTaskId(taskId)
       setTaskName(taskName)
       setTaskDesc(taskDesc)
       setRequestor(requestor)
-      setWorkPhone(workNumber)
+      setWorkNumber(workNumber)
       setMobile(mobile)
       setEmail(email)
       setDateCreated(dateCreated)
       showModalEdit()
    }
 
-   // function updateUsers(){
-   //    updateUser(userId, fname, lname, mname, email, uname, pword)
-   //    get()
-   //    closeModalEdit()
-   //    Redirect(TaskData)
-   // }
+   const updateTask = () => {
+      updateTask(taskId, taskName, taskDesc, requestor, workNumber, mobile, email)
+      get()
+      Redirect(TaskData)
+   }
 
-   function delTask(taskId){
+   const delTask = (taskId) => {
       deleteTask(taskId)
       get()
       Redirect(TaskData)
    }
 
-   function get(){
+   const get = () => {
       getTasks((_return)=>{
          setTasks(_return)
       })
@@ -117,7 +105,7 @@ const TaskData = () => {
                         <h4 className="card-title">Tasks</h4>
                      </div>
                      <div>
-                        <Button  className="text-center btn-primary btn-icon mt-lg-0 mt-md-0 mt-3" onClick={showModalAdd}>
+                        <Button  className="text-center btn-primary btn-icon mt-lg-0 mt-md-0 mt-3" onClick={() => {showModalAdd()}}>
                            <i className="btn-inner">
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -147,7 +135,7 @@ const TaskData = () => {
 
                                  <Form.Group className="mb-3 md-12" controlId="frmLname">
                                     <Form.Label>Work Phone</Form.Label>
-                                    <Form.Control type="text" onChange={e => setWorkPhone(e.target.value)}/>
+                                    <Form.Control type="text" onChange={e => setWorkNumber(e.target.value)}/>
                                  </Form.Group>
 
                                  <Form.Group className="mb-3 md-12" controlId="frmLname">
@@ -173,13 +161,13 @@ const TaskData = () => {
                                  <Button variant="primary" onClick={() =>{add()}}>
                                     Save
                                  </Button>{' '}
-                                 <Button variant="danger" onClick={closeModalAdd}>
+                                 <Button variant="danger" onClick={() => {closeModalAdd()}}>
                                     Cancel
                                  </Button>
                               </Modal.Body>
                         </Modal>
 
-                        <Modal show={showEdit} onHide={closeModalEdit}>
+                        <Modal show={showEdit} onHide={() => {closeModalEdit()}}>
                            <Modal.Header closeButton>
                               <Modal.Title>Task</Modal.Title>
                            </Modal.Header>
@@ -188,7 +176,7 @@ const TaskData = () => {
                                  <Form.Label>Full Name</Form.Label>
                                  <Form.Control type="text" defaultValue={requestor} onChange={e => setRequestor(e.target.value)}/>
                                  <Form.Label>Work Phone</Form.Label>
-                                 <Form.Control type="email" defaultValue={workPhone} onChange={e => setEmail(e.target.value)}/>
+                                 <Form.Control type="email" defaultValue={setWorkNumber} onChange={e => setEmail(e.target.value)}/>
                                  <Form.Label>Mobile</Form.Label>
                                  <Form.Control type="text" defaultValue={mobile} onChange={e => setMobile(e.target.value)}/>
                                  <Form.Label>Email</Form.Label>
@@ -200,10 +188,10 @@ const TaskData = () => {
                                  <Form.Label>Description</Form.Label>
                                  <Form.Control as="textarea" row="5" defaultValue={taskDesc} onChange={e => setTaskDesc(e.target.value)}/>
                               </Form.Group>
-                              <Button variant="primary" >
+                              <Button variant="primary" onClick={() => {updateTask()}}>
                                  Save
                               </Button>{' '}
-                              <Button variant="danger" onClick={closeModalEdit}>
+                              <Button variant="danger" onClick={() => {closeModalEdit()}}>
                                  Cancel
                               </Button>
                            </Modal.Body>
@@ -225,10 +213,10 @@ const TaskData = () => {
                            <tbody>
                            {
                                  tasks.map((item) => (
-                              <tr key={item.taskId} onClick={() => { editTask(item.taskId, item.taskName, item.taskDescription, item.requestor, item.workNumber, item.mobile, item.email, item.dateCreated ) }} style={{cursor: 'pointer'}} >
-                                 <td width={'60%'}>{item.taskName}</td>
-                                 <td>{item.dateCreated}</td>
-                                 <td>{item.dateDue}</td>
+                              <tr key={item.taskId}>
+                                 <td width={'60%'} onClick={() => { editTask(item.taskId, item.taskName, item.taskDescription, item.requestor, item.workNumber, item.mobile, item.email, item.dateCreated ) }} style={{cursor: 'pointer'}}>{item.taskName}</td>
+                                 <td onClick={() => { editTask(item.taskId, item.taskName, item.taskDescription, item.requestor, item.workNumber, item.mobile, item.email, item.dateCreated ) }} style={{cursor: 'pointer'}}>{item.dateCreated}</td>
+                                 <td onClick={() => { editTask(item.taskId, item.taskName, item.taskDescription, item.requestor, item.workNumber, item.mobile, item.email, item.dateCreated ) }} style={{cursor: 'pointer'}}>{item.dateDue}</td>
                                  <td>
                                     <div style={{float:"left"}}>
                                        <Link className="btn btn-sm btn-icon text-danger"  data-bs-toggle="tooltip" title="Delete Task" to="#" onClick={() => {delTask(item.taskId)}}>

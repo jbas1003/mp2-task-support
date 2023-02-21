@@ -65,9 +65,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "fslightbox-react": "^1.6.2-2",
-    "sortablejs": "^1.14.0"
   }
 }

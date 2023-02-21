@@ -12,7 +12,7 @@ const IndexRouters = () => {
             <Switch>
                 <Route exact path="/" component={Simple}></Route>
                 <Route path="/errors" component={Simple}></Route>
-                <Route path="/request-form" component={RequestForm}></Route>
+                <Route path="/request-form" component={RequestForm} />
                 <Route path="/dashboard" component={Default}></Route>
             </Switch>
         </>

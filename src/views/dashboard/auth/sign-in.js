@@ -8,50 +8,47 @@ import auth1 from     '../../../assets/images/auth/01.png'
 import brand from '../../../assets/images/task support logo - 2.png'
 import { signIn } from '../../../assets/Utils/methods'
 
-
-
 function SignIn () {
-
-   // try {
-   //    console.log('try')
-   //    const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
    
-   //    if (isUserSignedIn && isUserSignedIn.uname) {
-   //       window.location.href = 'http://localhost:3001/dashboard'
-   //    }
-   //    else{
-         
-   //    }
-   // } catch (error) {
-      
-   // }
-
 
    const [username, setUsername] = useState();
    const [password, setPassword] = useState();
 
    const signInUser = () => {
-     signIn(username, password)
-               .then(result => {
-                  return result.json()
-               })
-               .then(result => {
-                  if (result.success) {
-                     localStorage.setItem('user', JSON.stringify(result.userData))
-                     window.location.href = 'http://localhost:3001/dashboard'
-                  }
-                  else{
-                     alert('Invalid login')
-                  }
-               })
-               .catch((error) => {
-                  console.log('Login Error: ', error)
-               })
+   
+      try {
+         const isUserSignedIn = JSON.parse(localStorage.getItem('user'))
+   
+         if (isUserSignedIn && isUserSignedIn.uname) {
+            window.location.href = 'http://localhost:3001/dashboard'
+         }
+         else{
+            signIn(username, password)
+         .then(result => {
+            return result.json()
+         })
+         .then(result => {
+            if (result.success) {
+               localStorage.setItem('user', JSON.stringify(result.userData))
+               window.location.href = 'http://localhost:3001/dashboard'
+            }
+            else{
+               alert('Invalid login')
+            }
+         })
+         .catch((error) => {
+            console.log('Login Error: ', error)
+         })
+         }
+     } catch (error) {
+         
+     }
+      
    }
 
    return (
       <>
-         {/* <section className="login-content"> */}
+         <section className="login-content">
             <Row className="m-0 align-items-center bg-white vh-100">            
                <Col md="6">
                   <Row className="justify-content-center">
@@ -62,7 +59,7 @@ function SignIn () {
                                  <Image src={brand} className="Image-fluid gradient-main animated-scaleX" />
                               </Link>
                               <h2 className="mb-2 text-center">Sign In</h2>
-                              {/* <Form> */}
+                              <Form>
                                  <Row>
                                     <Col lg="12">
                                        <Form.Group className="form-group">
@@ -82,14 +79,14 @@ function SignIn () {
                                           <Form.Check.Label htmlFor="customCheck1">Remember Me</Form.Check.Label>
                                        </Form.Check>
                                        <p>
-                                          Forgot Password? <Link to="/auth/recoverpw">Submit a ticket</Link>.
+                                          <Link to="/request-form">Submit a ticket</Link>.
                                        </p>
                                     </Col>
                                  </Row>
                                  <div className="d-flex justify-content-center">
-                                    <Button type="submit" onClick={signInUser} variant="btn btn-primary">Sign In</Button>
+                                    <Button type="submit" onClick={() => {signInUser()}} variant="btn btn-primary">Sign In</Button>
                                  </div>
-                              {/* </Form> */}
+                              </Form>
                            </Card.Body>
                         </Card>
                      </Col>
@@ -99,7 +96,7 @@ function SignIn () {
                   <Image src={auth1} className="Image-fluid gradient-main animated-scaleX" alt="images"/>
                </Col>
             </Row>
-         {/* </section> */}
+         </section>
         </>
     )
 }

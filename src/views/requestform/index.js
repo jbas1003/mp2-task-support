@@ -63,8 +63,8 @@ const FormElement = () => {
                                             <Form.Label  htmlFor="exampleFormControlTextarea1">Description</Form.Label>
                                             <Form.Control as="textarea"  id="exampleFormControlTextarea1" rows="5" onChange={e => settaskDesc(e.target.value)}/>
                                         </Form.Group>
-                                        <Button type="button" variant="btn btn-primary" onClick={addTask}>Submit</Button>{' '}
-                                        <Button type="button" variant="btn btn-danger" onClick={window.location.href = 'http://localhost:3001/'}>cancel</Button>
+                                        <Button type="button" variant="btn btn-primary" onClick={() => {addTask()}}>Submit</Button>{' '}
+                                        <Button type="button" variant="btn btn-danger" onClick={() => {window.location.href = 'http://localhost:3001/'}}>cancel</Button>
                                     </Form>
                                 </Card.Body>
                             </Card>
